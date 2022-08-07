@@ -1,0 +1,53 @@
+# local
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  servlet:
+    multipart:
+      #      enabled: true # 멀티파트 업로드 지원여부 (default: true)
+      #      file-size-threshold: 1MB #  파일이 메모리에 기록되는 임계값 (default: 0B)
+      #      location: C:/Temp # 업로드된 파일의 임시 저장 공간
+      location: /Users/narafu/dev/attach # 업로드된 파일의 임시 저장 공간
+      max-file-size: 100MB # 파일의 최대 사이즈 (default: 1MB)
+      max-request-size: 100MB # 요청의 최대 사이즈 (default: 10MB)
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/lawingmachineV2_db?autoReconnect=true
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      data-locations: classpath:db/data-mariadb.sql
+      mode: never
+      platform: mariadb
+
+#springdoc:
+#  api-docs:
+#    version: openapi_3_0
+#    path: /local
+#    groups:
+#      enabled: true
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    display-request-duration: true
+#    groups-order: DESC
+#    operationsSorter: method
+#    disable-swagger-default-url: true
+#  show-actuator: true
+#  group-configs:
+#    - group: stores
+#      paths-to-match: /store/**
+#    - group: users
+#      packages-to-scan: org.springdoc.demo.app2

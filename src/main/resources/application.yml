@@ -1,0 +1,27 @@
+# 공통
+
+spring:
+  main:
+    allow-circular-references: true
+  profiles:
+    active: local
+  devtools:
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8080
+  max-http-header-size: 400000
+
+logging:
+  pattern:
+    console: "%-5level %d{yyyy-MM-dd HH:mm:ss}[%thread] %logger[%method:%line] - %msg%n"
+    logback:
+      rollingpolicy:
+        file-name-pattern: "${LOG_FILE}.%d{yyyy-MM-dd}_%i.zip"
+  level:
+    root: INFO
+    com.web.lawingmachine: DEBUG
+    org.springframework.security: DEBUG
