@@ -13,23 +13,23 @@ import javax.persistence.MappedSuperclass;
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class BaseEntity extends BaseTimeEntity {
+public abstract class BaseEntity extends BaseTimeEntity {
 
     @CreatedBy
-    @Column(length = 20, updatable = false)
+    @Column(length = 50, updatable = false)
     @Comment("등록자 아아디")
     private String registerId;
 
-    @Column(length = 20)
+    @Column(length = 50)
     @Comment("등록자 이름")
     private String registerNm;
 
     @LastModifiedBy
-    @Column(length = 20)
+    @Column(length = 50)
     @Comment("수정자 아이디")
     private String modifyId;
 
-    @Column(length = 20)
+    @Column(length = 50)
     @Comment("수정자 이름")
     private String modifyNm;
 

@@ -15,23 +15,23 @@ public class UserInfo extends BaseEntity {
     @Column(name = "userInfo_id")
     private int id;
 
-    @Column(length = 20)
+    @Column(length = 50)
     @Comment("사용자 아이디")
     private String userId;
 
-    @Column(length = 10)
+    @Column(length = 50)
     @Comment("사용자 이름")
     private String userNm;
 
-    @Column(length = 50)
+    @Column(length = 100)
     @Comment("비밀번호")
     private String password;
 
-    @Column(length = 20)
+    @Column(length = 50)
     @Comment("닉네임")
     private String nickname;
 
-    @Column(length = 50)
+    @Column(length = 100)
     @Comment("이메일")
     private String email;
 
@@ -51,11 +51,11 @@ public class UserInfo extends BaseEntity {
     @Comment("로그인 횟수")
     private int loginCnt;
 
-    @Column(length = 30)
+    @Column(length = 50)
     @Comment("수험번호")
     private String examTicketNo;
 
-    @Column(length = 50)
+    @Column(length = 100)
     @Comment("수험표 이미지 경로")
     private String examTicketPath;
 }
